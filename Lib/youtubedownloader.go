@@ -14,13 +14,14 @@ func Download(url, output string) error {
 
 	if videoURL == "Error" {
 		fmt.Println("Error, unable to fetch APIs")
-	} else {
-		err := downloadFile(videoURL, output)
-		fmt.Println("Downloaded file")
-		if err != nil {
-			fmt.Println("Unable to download file")
-			return err
-		}
+	}
+
+	err := downloadFile(videoURL, output)
+
+	fmt.Println("Downloaded file")
+	if err != nil {
+		fmt.Println("Unable to download file")
+		return err
 	}
 
 	return nil
