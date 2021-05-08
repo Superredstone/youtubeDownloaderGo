@@ -35,8 +35,9 @@ func getVideoPosition(ytUrl string) string {
 	var file API
 	json.Unmarshal(responseData, &file)
 
-	return file.Link[0]
 	fmt.Println("Got url")
+
+	return file.Link[0]
 }
 
 func downloadFile(URL, fileName string) error {
