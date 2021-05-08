@@ -11,7 +11,12 @@ import (
 )
 
 func Download(url, output string) {
-	downloadFile(getVideoPosition(url), "Downloads/"+output)
+	_, err := os.Create("Downloads/")
+	if err != nil {
+		fmt.Println(err)
+	}
+
+	downloadFile(getVideoPosition(url), output)
 }
 
 func getVideoPosition(ytUrl string) string {

@@ -1,7 +1,16 @@
 package main
 
-import "./Lib/ytDownloader"
+import (
+	"flag"
+
+	ytDownloader "github.com/Superredstone/youtubeDownloaderGo/Lib"
+)
 
 func main() {
-	ytDownloader.Download("", "")
+	url := flag.String("u", "", "Youtube video URL")
+	out := flag.String("o", "", "Output name")
+
+	flag.Parse()
+
+	ytDownloader.Download(*url, *out+".mp4")
 }
