@@ -1,4 +1,4 @@
-module YoutubeVideoDownloaderGo
+module youtubeDownloaderGo
 
 go 1.16
 
