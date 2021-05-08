@@ -2,6 +2,8 @@ package main
 
 import (
 	"flag"
+
+	downloader "github.com/Superredstone/youtubeDownloaderGo"
 )
 
 func main() {
@@ -10,5 +12,5 @@ func main() {
 
 	flag.Parse()
 
-	youtubeDownloaderGo.download(url, output)
+	downloader.youtubeDownloaderGo.download(url, output)
 }
