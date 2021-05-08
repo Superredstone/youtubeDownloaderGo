@@ -10,11 +10,17 @@ import (
 )
 
 func Download(url, output string) error {
-	err := downloadFile(getVideoPosition(url), output)
-	fmt.Println("Downloaded file")
-	if err != nil {
-		fmt.Println("Unable to download file")
-		return err
+	videoURL := getVideoPosition(url)
+
+	if videoURL == "Error" {
+		fmt.Println("Error, unable to fetch APIs")
+	} else {
+		err := downloadFile(videoURL, output)
+		fmt.Println("Downloaded file")
+		if err != nil {
+			fmt.Println("Unable to download file")
+			return err
+		}
 	}
 
 	return nil
@@ -34,10 +40,11 @@ func getVideoPosition(ytUrl string) string {
 
 	var file API
 	json.Unmarshal(responseData, &file)
-
-	fmt.Println("Got url")
-
-	return file.Link[0]
+	if file.Error == "No links found" {
+		return "Error"
+	} else {
+		return file.Link[0]
+	}
 }
 
 func downloadFile(URL, fileName string) error {
@@ -64,11 +71,10 @@ func downloadFile(URL, fileName string) error {
 		return err
 	}
 
-	fmt.Println("Downloaded file 1")
-
 	return nil
 }
 
 type API struct {
-	Link []string `json:"links"`
+	Link  []string `json:"links"`
+	Error string   `json:"error"`
 }
