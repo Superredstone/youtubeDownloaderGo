@@ -10,5 +10,5 @@ func main() {
 
 	flag.Parse()
 
-	youtubeDownloaderGo.download(url, output)
+	youtubeDownloaderGo.youtubeDownloaderGo.download(url, output)
 }
