@@ -11,6 +11,7 @@ import (
 
 func Download(url, output string) error {
 	err := downloadFile(getVideoPosition(url), output)
+	fmt.Println("Downloaded file")
 	if err != nil {
 		fmt.Println("Unable to download file")
 		return err
@@ -35,6 +36,7 @@ func getVideoPosition(ytUrl string) string {
 	json.Unmarshal(responseData, &file)
 
 	return file.Link[0]
+	fmt.Println("Got url")
 }
 
 func downloadFile(URL, fileName string) error {
@@ -60,6 +62,8 @@ func downloadFile(URL, fileName string) error {
 	if err != nil {
 		return err
 	}
+
+	fmt.Println("Downloaded file 1")
 
 	return nil
 }
