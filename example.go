@@ -2,6 +2,7 @@ package main
 
 import (
 	"flag"
+	"fmt"
 
 	ytDownloader "github.com/Superredstone/youtubeDownloaderGo/Lib"
 )
@@ -12,5 +13,8 @@ func main() {
 
 	flag.Parse()
 
-	ytDownloader.Download(*url, *out+".mp4")
+	err := ytDownloader.Download(*url, *out+".mp4")
+	if err != nil {
+		fmt.Println(err)
+	}
 }
