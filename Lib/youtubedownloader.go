@@ -18,7 +18,6 @@ func Download(url, output string) error {
 
 	err := downloadFile(videoURL, output)
 
-	fmt.Println("Downloaded file")
 	if err != nil {
 		fmt.Println("Unable to download file")
 		return err
