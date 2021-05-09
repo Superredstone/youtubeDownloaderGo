@@ -1,5 +1,7 @@
 <p align="center">
   <img src="https://github.com/Superredstone/youtubeDownloaderGo/blob/master/Assets/Download.png" width=200></img> <br><br>
+  <img src="https://img.shields.io/github/go-mod/go-version/Superredstone/youtubeDownloaderGo?label=Version&style=for-the-badge">
+   <img src="https://img.shields.io/github/languages/top/Superredstone/youtubeDownloaderGo?style=for-the-badge">
   <img src="https://img.shields.io/github/license/Superredstone/youtubeDownloaderGo?color=Green&style=for-the-badge">
   <img src="https://img.shields.io/discord/821836676607115304?label=Discord&style=for-the-badge"></img>
 <p>
