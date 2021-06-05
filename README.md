@@ -15,7 +15,7 @@ Youtube downloader Go is a simple library and application written in Golang for 
 - Lightweight library
 
 # Application usage
-Download clicking [here](https://github.com/Superredstone/youtubeDownloaderGo/releases/tag/1.0.0)
+Download clicking [here](https://github.com/Superredstone/youtubeDownloaderGo/releases)
 
 ```bash
 ./YoutubeDownloaderGo-<YOUR OS>-<YOURARCH> -u "https://www.youtube.com/watch?v=aqz-KE-bpKQ" -o "BigBuckBunny"
@@ -24,7 +24,7 @@ Download clicking [here](https://github.com/Superredstone/youtubeDownloaderGo/re
 # Getting started
 Download library: 
 ```bash
-go get github.com/Superredstone/youtubeDownloaderGo/Lib
+go get github.com/Superredstone/youtubeDownloaderGo/pkg
 ```
 
 # Example
@@ -32,7 +32,7 @@ go get github.com/Superredstone/youtubeDownloaderGo/Lib
 package main
 
 import (
-    ytDownloader "github.com/Superredstone/youtubeDownloaderGo/Lib"
+    ytDownloader "github.com/Superredstone/youtubeDownloaderGo/pkg"
 )
 
 func main() {
@@ -40,7 +40,8 @@ func main() {
 }
 ```
 
-# Problems
-- Some newer videos doesn't works
+# TODO
+  - [ ] Download a video list
+  - [ ] Download an entire playlist
 
 # GNU GPL V3
