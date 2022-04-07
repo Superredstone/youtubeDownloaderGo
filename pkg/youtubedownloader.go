@@ -19,8 +19,7 @@ func Download(url, output string) error {
 	err = downloadFile(videoURL, output)
 
 	if err != nil {
-		fmt.Println("Unable to download file")
-		return err
+		return errors.New("error, unable to download the video")
 	}
 
 	return nil
@@ -48,7 +47,7 @@ func getVideoPosition(ytUrl string) (string, error) {
 }
 
 func downloadFile(URL, fileName string) error {
-	//Get the response bytes from the url
+	// Get the response bytes from the url
 	response, err := http.Get(URL)
 	if err != nil {
 		return err
@@ -56,16 +55,16 @@ func downloadFile(URL, fileName string) error {
 	defer response.Body.Close()
 
 	if response.StatusCode != 200 {
-		return err
+		return errors.New("error, unable to download the video")
 	}
-	//Create a empty file
+	// Create a empty file
 	file, err := os.Create(fileName)
 	if err != nil {
 		return err
 	}
 	defer file.Close()
 
-	//Write the bytes to the fiel
+	// Write the bytes to the file
 	_, err = io.Copy(file, response.Body)
 	if err != nil {
 		return err

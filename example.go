@@ -23,8 +23,12 @@ func main() {
 
 	flag.Parse()
 
+	fmt.Println("Downloading " + *url)
+
 	err := ytDownloader.Download(*url, *out+".mp4")
 	if err != nil {
 		fmt.Println(err)
 	}
+
+	fmt.Println("Download finished")
 }
